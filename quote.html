@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>quote</title>
+   <style>
+     
+
+     body > h1 {
+       width:480px;
+       height: 100px;
+       background-color: rgba(221, 55, 213, 0.5);
+       margin-left:800px;
+       margin-top:60px;
+       font-size:60px;
+       text-align: center;
+     }
+
+     .box {
+       background-color:#fff;
+       width: 100%;
+       margin-top: 40px;
+       height: 100%;
+       font-size: 80px;
+       text-align: center;
+       border-top: 2px solid rgba(221, 55, 213, 0.5);
+       padding-top: 60px;
+       font-style: italic;
+     }
+
+   </style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">목록</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery">gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quote">quote</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</head>
+
+<body>
+    <h1>Today's Quote</h1>
+
+    <div class="box">
+      <div id="quote"></div>
+      <div id="author"></div>
+    </div>
+  </div>
+    <script>
+      const url = "https://api.quotable.io/random";
+
+      function startQuote(){
+      fetch(url)
+     .then(function(word) {
+         return word.json();
+    })
+
+    .then(function(word){    
+    document.getElementById("quote").innerHTML = word.content;
+    document.querySelector(".author").innerHTML = "-" + word.author;
+   })
+
+    .catch(function(err) {
+    console.log(err); 
+    });
+    }
+ 
+    setInterval(startQuote() ,10000);
+
+
+    </script>
+</body>
+</html>
