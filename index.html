@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet">
     <title>HW's space</title>
 
     <div class="head">
@@ -15,9 +14,14 @@
     </div>
     
       <style>
-          .head >h1, p {
+          body > p {
+            font-size:100px;
+            text-align: center;
+          }
+          .head > h1 {
             height:100px;
             text-align: center;
+            line-height:70px;
             background-color:rgb(122, 211, 177);
             color: white;
             margin: 10px;
@@ -28,9 +32,50 @@
             padding-right:20px;
           }
         
+        .photo {
+          width:50%;
+          height:100%;
+          background-image: url('https://source.unsplash.com/category/nature/1600x900');
+          background-size: cover;
+          min-height:100vh;
+          margin-top:10px;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          float:left;
+        }
+
+        .photo > h1 {
+          background-color: rgba(255, 255, 255, 0.3);
+          padding:0.3rem;
+          color:white;
+         font-family: 'Source Sans Pro', sans-serif;
+         font-weight: 300;
+         font-size: 60px;
+        } 
+
+       .time {
+        background-color:rgba(255, 255, 255, 0.3);
+         font-size:50px;
+         margin-left:120px;
+         text-align:center;
+         height:100%;
+         margin-top:100px;
+        }
+
+        img {
+          float: right;
+          height: 600px;
+          width: 50%;
+          padding: 0 30px;
+          padding-top: 55px;
+
+}
         
       </style>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -47,28 +92,63 @@
               <a class="nav-link" href="gallery">gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="weather">weather</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="phrase">phrase</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="todo">todo</a>
+              <a class="nav-link" href="quote">quote</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    <div class="photo">
+      <h1>오늘의 사진은?</h1>
+    </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+    <p>지금은?</p>
+    <span id="time" class="time"></span>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
+    <img src="https://images.unsplash.com/photo-1545622783-b3e021430fee?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1048&q=80">
+  
+    <script>
+      function getTime() {
+     const date = new Date()
+ 
+      var year = date.getFullYear()
+      var month = date.getMonth() + 1
+      var day = date.getDate()
+      var hour = date.getHours()
+      var min = date.getMinutes()
+      var sec = date.getSeconds()
+      var time = false 
+ 
+      if(hour > 12) {
+         time = true;
+         hour -=12;
+      }
+ 
+       day = day < 10 ? '0'+ day : day
+       hour = hour < 10 ? '0'+ hour : hour
+       min = min < 10 ? '0'+ min : min
+       sec = sec < 10 ? '0'+ sec : sec
+ 
+      var result = year + '년' + month + '월' + day + '일' + ' ' 
+      + hour + '시' + min + "분" + sec + '초'
+ 
+       if(time == true)
+         result +="pm"
+       else 
+        result +="am"
+ 
+      document.getElementById('time').textContent = result  
+    }
+
+       function init() {
+        getTime();
+        setInterval(getTime, 1000);
+      }
+ 
+       init();
+ 
+     </script>
   </body>
 </html>
