@@ -25,19 +25,11 @@ app.get('/', function(req, res){
     res.sendfile(__dirname +'/index.html');
 });
 
-app.get('/todo', function(req, res){
-    res.sendfile(__dirname +'/todo.html');
-});
-
-app.get('/weather', function(req, res){
-    res.sendfile(__dirname +'/weather.html');
-});
-
 app.get('/gallery', function(req, res){
     res.sendfile(__dirname +'/gallery.html');
 });
 
-app.get('/phrase', function(req, res){
-    res.sendfile(__dirname +'/phrase.html');
+app.get('/quote', function(req, res){
+    res.sendfile(__dirname +'/quote.html');
 });
 
