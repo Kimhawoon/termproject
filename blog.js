@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT ? process.env.PORT : 8080;
+const PORT = process.env.PORT;
 const morgan = require('morgan');
 const path = require('path');
 const nunjucks = require('nunjucks');
