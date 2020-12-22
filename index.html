@@ -55,6 +55,10 @@
          font-size: 60px;
         } 
 
+        .exist-content {
+          animation: exist-content 2.5s ease-out;
+        }
+
        .time {
         background-color:rgba(255, 255, 255, 0.3);
          font-size:50px;
@@ -64,15 +68,18 @@
          margin-top:100px;
         }
 
+        @keyframes exist-content {
+        from { opacity: 0; }
+         to { opacity: 1; }
+}
+
         img {
           float: right;
           height: 600px;
           width: 50%;
           padding: 0 30px;
-          padding-top: 55px;
-
+          padding-top: 55px;    
 }
-        
       </style>
   </head>
 
@@ -107,8 +114,10 @@
     <p>지금은?</p>
     <span id="time" class="time"></span>
 
+    <div class="exist-content">
     <img src="https://images.unsplash.com/photo-1545622783-b3e021430fee?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1048&q=80">
-  
+   </div>
+
     <script>
       function getTime() {
      const date = new Date()
