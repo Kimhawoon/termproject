@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT
+const PORT = process.env.PORT ? process.env.PORT : 8080;
 const morgan = require('morgan');
 const path = require('path');
 const nunjucks = require('nunjucks');
@@ -17,7 +17,7 @@ nunjucks.configure('views', {
 
   app.use(morgan('dev'));  
 
-app.listen(8080, function(){
+app.listen(PORT, function(){
    console.log('listening on 8080'); 
 });
 
