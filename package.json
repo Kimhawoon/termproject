@@ -4,7 +4,7 @@
   "description": "",
   "main": "blog.js",
   "scripts": {
-    "start": "node blog.js"
+    "start": "nodemon blog.js"
   },
   "author": "",
   "license": "ISC",
