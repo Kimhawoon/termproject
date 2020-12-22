@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>Gallery 구현</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: grid;
+    width: 1000px;
+    grid-template-columns: repeat(5, 300px);
+    grid-auto-rows: 200px;
+    grid-auto-flow: row dense;
+    margin-left:20px;
+    margin-right:10px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    transition-duration: 500ms;
+    opacity: 0.5;
+  }
+  
+  img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 1;
+}
+
+img.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+body > h1 {
+    margin:10px;
+    padding:10px;
+    font-weight: 400px;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">목록</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery">gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weather">weather</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="phrase">phrase</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="todo">todo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</head>
+<body>
+    <h1>갤러리</h1>
+  <div class="container">
+    <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80/">
+    <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=259&q=80/150x100">
+    <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" class="big">
+    <img src="https://images.unsplash.com/photo-1550599112-0c21a831f6b9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="big">
+    <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80">
+    <img src="https://images.unsplash.com/photo-1506816561089-5cc37b3aa9b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1141&q=80">
+    <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80">
+    <img src="https://images.unsplash.com/photo-1508402476522-c77c2fa4479d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+    <img src="https://images.unsplash.com/photo-1590929034342-fd0eb9c97fdd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80">
+  </div>
+</body>
+</html>
