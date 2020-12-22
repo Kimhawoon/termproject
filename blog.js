@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT
 const morgan = require('morgan');
 const path = require('path');
 const nunjucks = require('nunjucks');
 const createError = require('http-errors');
-
 
 app.use(express.static(__dirname+'/public'));
 
@@ -15,7 +15,7 @@ nunjucks.configure('views', {
   
   app.set('view engine', 'html');
 
-  app.use(morgan('dev'));  // morgan('dev')
+  app.use(morgan('dev'));  
 
 app.listen(8080, function(){
    console.log('listening on 8080'); 
