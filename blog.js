@@ -17,7 +17,7 @@ nunjucks.configure('views', {
 
   app.use(morgan('dev'));  
 
-app.listen(PORT, function(){
+app.listen(8080, function(){
    console.log('listening on 8080'); 
 });
 
