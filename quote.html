@@ -62,7 +62,6 @@
 
     <div class="box">
       <div id="quote"></div>
-      <div id="author"></div>
     </div>
   </div>
     <script>
@@ -76,7 +75,6 @@
 
     .then(function(word){    
     document.getElementById("quote").innerHTML = word.content;
-    document.querySelector(".author").innerHTML = "-" + word.author;
    })
 
     .catch(function(err) {
