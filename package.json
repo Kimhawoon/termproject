@@ -4,7 +4,7 @@
   "description": "",
   "main": "blog.js",
   "scripts": {
-    "start": "nodemon blog"
+    "start": "nodemon blog.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,10 @@
     "http-errors": "^1.8.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
-    "nunjucks": "^3.2.2"
+    "nunjucks": "^3.2.2",
+    "node": "14.15.1",
+    "npm": "6.14.8"
+    
   }
+ 
 }
